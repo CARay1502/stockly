@@ -17,7 +17,7 @@ st.subheader("Stock Data AI Aggregator! Relevant Data & News...")
 with st.sidebar:
     st.header("Welcome to Stockly!")
     st.subheader("Investing made easy!") 
-    st.text("Stockly is a tech startup focused in making financial data easy and accurate! Make informed decisions with faster and more relevant information!")
+    st.text_area("Stockly is a tech startup focused in making financial data easy and accurate! Make informed decisions with faster and more relevant information!")
     st.divider()
     st.caption("Navigate over to our Test Data Engine")
 
