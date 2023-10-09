@@ -4,3 +4,4 @@ pandas_datareader==0.10.0
 plotly==5.17.0
 streamlit==1.25.0
 yfinance==0.2.29
+streamlit-lottie==0.0.5
