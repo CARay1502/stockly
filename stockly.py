@@ -12,10 +12,10 @@ st.set_page_config(
     layout="centered",
 )
 # --- PATH SETTINGS & CSS FILE LOAD--- 
-#current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
-#css_file = current_dir / "styles" / "main.css"
-#with open(css_file) as f:
-    #st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
+current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
+css_file = current_dir / "main.css"
+with open(css_file) as f:
+    st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
 
 yf.pdr_override()   #  NO IDEA WHAT THIS IS LOL
 
