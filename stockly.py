@@ -4,6 +4,7 @@ import pandas as pd
 from pandas_datareader import data as pdr
 import requests 
 from pathlib import Path
+from streamlit_lottie import st_lottie
 
 # --- PAGE CONFIG --- 
 st.set_page_config(
@@ -33,6 +34,7 @@ with st.sidebar:
     )
     st.divider()
     st.caption("Navigate over to our Test Data Engine")
+    st.lottie("https://lottie.host/0cb10a6d-aa93-409e-b6b6-5d035ba87e40/aa4qVv390m.json")
 
 # Function to convert company name to its corresponding stock ticker
 # --- Main st.form ---
