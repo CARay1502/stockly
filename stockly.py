@@ -5,6 +5,7 @@ from pandas_datareader import data as pdr
 import requests 
 from pathlib import Path
 from streamlit_lottie import st_lottie
+from PIL import Image
 
 # --- PAGE CONFIG --- 
 st.set_page_config(
@@ -55,7 +56,7 @@ with st.spinner("Collecting your data..."):
         data = yf.Ticker(stockTicker).info
         analysis = yf.Ticker(stockTicker).financials
         # headlines = yf.Ticker(stockTicker).news
-        news_url = f"https://newsapi.org/v2/everything?q={stockTicker}&apiKey={api_key}"
+        news_url = f"https://newsapi.org/v2/everything?q={stockTicker}&pageSize=10&apiKey={api_key}"
         response = requests.get(news_url)
 
         tab1, tab2, tab3 = st.tabs(["News", "Summary", "Financials"]) 
@@ -69,17 +70,18 @@ with st.spinner("Collecting your data..."):
             if response.status_code == 200:
                 news_data = response.json() 
                 articles = news_data["articles"]
-
+            
             for article in articles:
+                st.image(f"{article['urlToImage']}")  
                 st.subheader(f"{article['title']}")
                 st.write(f"{article['description']}")
                 st.caption(f"**Source:** {article['source']['name']}")
                 st.caption(f"**Published At:** {article['publishedAt']}")
                 st.write(f"**URL:** [{article['url']}]({article['url']})")
                 st.write("---")
+                
         with tab3:
             st.subheader("Financials Table:") 
             st.table(analysis)
-    #else:
         #st.error("Error fetching news data. Please try again later.")
             
