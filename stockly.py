@@ -24,6 +24,7 @@ yf.pdr_override()   #  NO IDEA WHAT THIS IS LOL
 
 # --- LANDING PAGE --- 
 st.subheader("Stock Data AI Aggregator! Relevant Data & News...") 
+social_media= {"Instagram": "https://www.instagram.com/stock.ly23/"}
 
 #--- SIDE BAR BIO --- 
 with st.sidebar:
@@ -34,6 +35,7 @@ with st.sidebar:
         We are a FinTech startup located in Charlotte, NC. Devoted to making stock data & analysis easy and efficient!
         """
     )
+    st.button=social_media
     st.divider()
     st.caption("Navigate over to our Test Data Engine")
     st.lottie("https://lottie.host/0cb10a6d-aa93-409e-b6b6-5d035ba87e40/aa4qVv390m.json")
